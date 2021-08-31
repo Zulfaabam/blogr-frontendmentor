@@ -1,0 +1,330 @@
+.header {
+  width: 100%;
+  height: 600px;
+
+  //background
+  background: url(/images/bg-pattern-intro.svg),
+    linear-gradient(to right, $very-light-red, $light-red);
+  background-size: 350%, 100%;
+  background-position: 35% 34%, 0% 0%;
+  background-repeat: no-repeat, no-repeat;
+
+  border-bottom-left-radius: 10rem;
+
+  @media screen and (min-width: 45rem) {
+    background-size: 150%, 100%;
+    background-position: 0% 55%, 0% 0%;
+  }
+}
+
+.navbar {
+  // border: 1px solid black;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+
+  @media screen and (min-width: 64rem) {
+    margin: 0 5%;
+  }
+
+  @media screen and (min-width: 90rem) {
+    margin: 0 10%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 2.3rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+
+  //720px
+  @media screen and (min-width: 45rem) {
+    display: none;
+  }
+
+  &-hide {
+    opacity: 0;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  transition: all 1s ease-in-out;
+  z-index: 1;
+
+  @media screen and (min-width: 45rem) {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 87%;
+    // height: 100px;
+    border-radius: 5px;
+
+    box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1),
+      0px 20px 30px rgba($color: #000000, $alpha: 0.1);
+
+    @media screen and (min-width: 45rem) {
+      // border: 1px solid black;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      box-shadow: none;
+      border-radius: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+
+    hr {
+      color: $grayish-blue;
+      width: 90%;
+      margin: 28px 0 10px 0;
+
+      @media screen and (min-width: 45rem) {
+        display: none;
+      }
+    }
+  }
+
+  &-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 45rem) {
+      flex-direction: row;
+    }
+  }
+
+  &-hide {
+    left: 100vw;
+    opacity: 0;
+
+    @media screen and (min-width: 45rem) {
+      left: 0;
+      opacity: 1;
+    }
+  }
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 86.5%;
+  cursor: pointer;
+
+  @media screen and (min-width: 45rem) {
+    display: none;
+  }
+}
+
+.dropdown-wrapper {
+  @media screen and (min-width: 45rem) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 45rem) {
+    overflow: hidden;
+  }
+
+  .dropbtn {
+    border: none;
+    background: none;
+    color: $very-dark-blue;
+    outline: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 250ms ease;
+
+    @media screen and (min-width: 45rem) {
+      color: white;
+      font-size: 14px;
+    }
+
+    @media screen and (min-width: 90rem) {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      text-decoration: underline;
+
+      img {
+        transform: rotate(-180deg);
+      }
+    }
+
+    img {
+      transition: all 300ms ease-out;
+    }
+  }
+
+  &-content {
+    display: none;
+    padding: 1rem;
+    background: rgba($color: $grayish-blue, $alpha: 0.4);
+    font-family: inherit;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    z-index: 1;
+
+    @media screen and (min-width: 45rem) {
+      position: absolute;
+      top: 75px;
+      background-color: white;
+      box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.1),
+        0px 20px 30px rgba($color: #000000, $alpha: 0.1);
+    }
+
+    a {
+      display: block;
+      color: $very-dark-grayish-blue;
+      font-size: 14px;
+      padding: 0.5rem;
+      float: none;
+      text-decoration: none;
+      text-align: center;
+      transition: all 300ms ease;
+
+      @media screen and (min-width: 45rem) {
+        text-align: left;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+// show the dropdown menu on hover
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.arrow-dark {
+  @media screen and (min-width: 45rem) {
+    display: none;
+  }
+}
+
+.arrow-light {
+  display: none;
+  @media screen and (min-width: 45rem) {
+    display: inline;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1.5rem;
+  transition: all 250ms ease;
+}
+
+.login-btn {
+  color: $very-dark-blue;
+  background: none;
+
+  @media screen and (min-width: 45rem) {
+    color: white;
+  }
+}
+
+.signup-btn {
+  color: white;
+  background: linear-gradient(to right, $very-light-red, $light-red);
+
+  &:hover {
+    color: white;
+    background: $very-light-red;
+  }
+
+  @media screen and (min-width: 45rem) {
+    background: white;
+    color: $light-red;
+  }
+}
+
+.header-content {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 0 2.6rem;
+
+  button {
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+  }
+}
+
+.start-btn {
+  color: $light-red;
+
+  &:hover {
+    color: white;
+    background: $very-light-red;
+  }
+}
+
+.learn-btn {
+  color: white;
+  background: none;
+  border: 1px solid white;
+
+  &:hover {
+    color: $light-red;
+    background: white;
+  }
+}

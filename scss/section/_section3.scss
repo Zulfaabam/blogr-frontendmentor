@@ -1,0 +1,54 @@
+.section3 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  @media screen and (min-width: 64rem) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  @media screen and (min-width: 90rem) {
+    position: relative;
+    overflow: hidden;
+    padding: 250px 170px;
+  }
+
+  .text {
+    padding: 0 3rem;
+
+    @media screen and (min-width: 45rem) {
+      width: 47%;
+    }
+
+    @media screen and (min-width: 64rem) {
+      width: 47%;
+      text-align: left;
+    }
+
+    @media screen and (min-width: 90rem) {
+      width: 47%;
+    }
+  }
+}
+
+.img-laptop {
+  @media screen and (min-width: 90rem) {
+    display: none;
+  }
+
+  &-desktop {
+    display: none;
+
+    //1440px
+    @media screen and (min-width: 90rem) {
+      display: block;
+      position: absolute;
+      left: -20%;
+    }
+  }
+}
